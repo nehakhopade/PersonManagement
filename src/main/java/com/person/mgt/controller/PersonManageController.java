@@ -6,7 +6,9 @@ import com.person.mgt.response.PersonResponse;
 import com.person.mgt.service.PersonManageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
+/*
+* this is controller class.
+* */
 @RestController
 @RequestMapping("/v1/personmanage")
 public class PersonManageController {
