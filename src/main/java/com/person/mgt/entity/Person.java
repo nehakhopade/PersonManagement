@@ -70,14 +70,14 @@ public class Person {
     public void setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
-    @Column(name = "emailId" )
-    private String emailId;
-
-    public String getEmailId() {
-        return emailId;
-    }
-
-    public void setEmailId(String emailId) {
-        this.emailId = emailId;
-    }
+//    @Column(name = "emailId" )
+//    private String emailId;
+//
+//    public String getEmailId() {
+//        return emailId;
+//    }
+//
+//    public void setEmailId(String emailId) {
+//        this.emailId = emailId;
+//    }
 }

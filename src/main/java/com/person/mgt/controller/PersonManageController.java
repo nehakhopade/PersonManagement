@@ -6,6 +6,9 @@ import com.person.mgt.response.PersonResponse;
 import com.person.mgt.service.PersonManageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
 /*
 * this is controller class.
 * */
@@ -31,6 +34,12 @@ public class PersonManageController {
 
         PersonBaseResponse personBaseResponse =personManageService.getServicePerson(id);
         return personBaseResponse;
+    }
+
+    @GetMapping("/getAllPerson")
+    public List<PersonBaseResponse> getAllPerson(){
+        List<PersonBaseResponse> list1 = personManageService.getAllServicePerson();
+        return list1;
     }
 
     @PutMapping("/updatePerson/{id}")

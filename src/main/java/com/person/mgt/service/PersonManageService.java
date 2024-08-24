@@ -8,8 +8,8 @@ import com.person.mgt.response.PersonResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Date;
-import java.util.Optional;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class PersonManageService {
@@ -38,6 +38,30 @@ public class PersonManageService {
           personBaseResponse.setName(person.getName());
           personBaseResponse.setAddress(person.getAddress());
           return personBaseResponse;
+    }
+
+    public List<PersonBaseResponse> getAllServicePerson(){
+            Iterable<Person> iterable = personRepository.findAll();
+            List<Person> result = new ArrayList<>();
+            for(Person per : iterable)
+            {
+                result.add(per);
+            }
+          List<PersonBaseResponse> list1 = result.stream().map(person -> {
+                PersonBaseResponse personBaseResponse = new PersonBaseResponse();
+                 personBaseResponse.setId(person.getId());
+                 personBaseResponse.setName(person.getName());
+                 personBaseResponse.setAddress(person.getAddress());
+                 return personBaseResponse;
+            }).collect(Collectors.toList());
+
+            return list1;
+
+
+
+
+
+
     }
     public PersonResponse updateServicePerson(Long id,PersonRequest personRequest)
     {
