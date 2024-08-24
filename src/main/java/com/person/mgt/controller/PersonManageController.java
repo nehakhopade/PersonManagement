@@ -16,6 +16,10 @@ public class PersonManageController {
     @Autowired
     private PersonManageService personManageService;
 
+
+    /* *
+     * this post api is responsible to create person at db.
+     * */
     @PostMapping("/createPerson")
    public PersonResponse createPerson(@RequestBody PersonRequest personRequest){
        PersonResponse personResponse = personManageService.createServicePerson(personRequest);
