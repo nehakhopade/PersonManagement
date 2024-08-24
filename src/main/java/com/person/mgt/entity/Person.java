@@ -7,7 +7,10 @@ import org.springframework.stereotype.Component;
 
 
 import java.util.Date;
-
+/*
+* this is entity class,
+* help us to db commu.
+* */
 @Entity
 @Table(name = "person_info")
 public class Person {
