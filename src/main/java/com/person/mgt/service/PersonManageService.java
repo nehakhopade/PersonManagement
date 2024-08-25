@@ -40,7 +40,7 @@ public class PersonManageService {
           return personBaseResponse;
     }
 
-    public List<PersonBaseResponse> getAllServicePerson(){
+     public List<PersonBaseResponse> getAllServicePerson(){
             Iterable<Person> iterable = personRepository.findAll();
             List<Person> result = new ArrayList<>();
             for(Person per : iterable)
@@ -56,11 +56,6 @@ public class PersonManageService {
             }).collect(Collectors.toList());
 
             return list1;
-
-
-
-
-
 
     }
     public PersonResponse updateServicePerson(Long id,PersonRequest personRequest)
